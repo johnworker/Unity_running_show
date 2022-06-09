@@ -22,12 +22,17 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        float horizontalmove;
-        horizontalmove = Input.GetAxis("Horizontal");
+        float horizontalmove = Input.GetAxis("Horizontal");
+        float facedircetion = Input.GetAxisRaw("Horizontal");
 
         if(horizontalmove != 0)
         {
             rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
+        }
+
+        if(facedircetion != 0)
+        {
+            transform.localScale = new Vector3(facedircetion, 1, 1);
         }
     }
 }
