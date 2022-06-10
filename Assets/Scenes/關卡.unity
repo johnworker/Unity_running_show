@@ -2513,7 +2513,9 @@ GameObject:
   - component: {fileID: 1995846121}
   - component: {fileID: 1995846123}
   - component: {fileID: 1995846124}
+  - component: {fileID: 1995846126}
   - component: {fileID: 1995846125}
+  - component: {fileID: 1995846127}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2603,7 +2605,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2622,7 +2624,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031065136, y: -0.3137586}
+  m_Offset: {x: 0.031065136, y: -0.09918314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2633,7 +2635,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86959547, y: 1.3724828}
+  m_Size: {x: 0.86959547, y: 0.67085516}
   m_EdgeRadius: 0
 --- !u!114 &1995846125
 MonoBehaviour:
@@ -2648,8 +2650,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1995846123}
+  anim: {fileID: 1995846127}
   speed: 300
-  jumpforce: 360
+  jumpforce: 400
+--- !u!58 &1995846126
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995846120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.57220113}
+  serializedVersion: 2
+  m_Radius: 0.4045533
+--- !u!95 &1995846127
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995846120}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ac07832e34f5e640b32292d6758b704, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2104283254
 GameObject:
   m_ObjectHideFlags: 0
