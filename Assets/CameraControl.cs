@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    public Transform Player;
+    public Transform player;
 
     void Update()
     {
-        
+        transform.position = new Vector3 (player.position.x, 0, -10f);
     }
 }
