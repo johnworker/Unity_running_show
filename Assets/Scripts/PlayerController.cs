@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
+        SwitchAnim();
     }
 
     void Movement()
@@ -43,6 +44,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce * Time.deltaTime);
+            anim.SetBool("jumping", true);
+        }
+    }
+
+    void SwitchAnim()
+    {
+        if (anim.GetBool("jumping"))
+        {
+            if(rb.velocity.y < 0)
+            {
+                anim.SetBool("jumping", false);
+                anim.SetBool("falling", true);
+            }
         }
     }
 }
