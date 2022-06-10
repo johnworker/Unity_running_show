@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Animator anim;
+    // [SerializeField] 只要加上這個程式寫法，即使是設為私密還是會顯示於畫面中
+    private Rigidbody2D rb;
+    private Animator anim;
+
     public Collider2D coll;
     public float speed;
     public float jumpforce;
@@ -15,7 +17,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
