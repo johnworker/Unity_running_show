@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Movement();
     }
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
         if(horizontalmove != 0)
         {
-            rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
+            rb.velocity = new Vector2(horizontalmove * speed * Time.deltaTime, rb.velocity.y);
         }
 
         if(facedircetion != 0)
