@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpforce;
     public LayerMask ground;
+    public int Cherry;
 
 
     void Start()
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Collection")
         {
             Destroy(collision.gameObject);
+            Cherry += 1;
         }
     }
 }
