@@ -14,14 +14,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Movement();
@@ -68,6 +66,14 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("falling", false);
             anim.SetBool("idle", true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Collection")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
