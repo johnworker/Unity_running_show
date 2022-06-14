@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float jumpforce;
     public LayerMask ground;
     public int Cherry;
+
+    public TextMesh CherryNum;
 
 
     void Start()
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // 切換動畫效果
     void SwitchAnim()
     {
         anim.SetBool("idle", false);
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // 收集物品
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Collection")
