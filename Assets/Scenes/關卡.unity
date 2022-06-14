@@ -8932,6 +8932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 523327861895804298, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: CherryNum
+      value: 
+      objectReference: {fileID: 112586930}
     - target: {fileID: 523327861895804299, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Material
       value: 

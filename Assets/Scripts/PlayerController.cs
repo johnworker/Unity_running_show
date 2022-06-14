@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
     public int Cherry;
 
-    public TextMesh CherryNum;
+    [SerializeField] private TextMeshProUGUI CherryNum;
 
 
     void Start()
@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Cherry += 1;
+            CherryNum.textMeshPro = Cherry.ToString();
         }
     }
 }
