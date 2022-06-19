@@ -88,9 +88,14 @@ public class PlayerController : MonoBehaviour
     // ®ø·À¼Ä¤H
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Destroy(collision.gameObject);
+        if (anim.GetBool("falling")) 
+        { 
+
+            if(collision.gameObject.tag == "Enemy")
+            {
+                Destroy(collision.gameObject);
+            }
+
         }
     }
 }
