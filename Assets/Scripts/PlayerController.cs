@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float jumpforce;
     public LayerMask ground;
     public int Cherry;
+    private bool isHurt;
 
     [SerializeField] private TextMeshProUGUI CherryNum;
 
