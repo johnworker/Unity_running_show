@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Cherry += 1;
-            CherryNum.textMeshPro = Cherry.ToString();
+            CherryNum.text = Cherry.ToString();
         }
     }
 }
