@@ -74,9 +74,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (isHurt)
         {
-            if(Mathf.Abs(rb.velocity.x) < 0.1f)
+            anim.SetBool("hurt", true);
+            anim.SetFloat("running", 0);
+            if (Mathf.Abs(rb.velocity.x) < 0.1f)
             {
-
+                anim.SetBool("hurt", false);
+                anim.SetBool("idle", true);
+                isHurt = false;
             }
         }
         else if (coll.IsTouchingLayers(ground))
