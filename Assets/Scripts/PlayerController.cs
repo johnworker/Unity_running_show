@@ -88,12 +88,22 @@ public class PlayerController : MonoBehaviour
     // ®ø·À¼Ä¤H
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (anim.GetBool("falling")) 
+        if (collision.gameObject.tag == "Enemy") 
         { 
 
-            if(collision.gameObject.tag == "Enemy")
+            if(anim.GetBool("falling"))
             {
                 Destroy(collision.gameObject);
+                rb.velocity = new Vector2(rb.velocity.x, jumpforce * Time.deltaTime);
+                anim.SetBool("jumping", true);
+            }else if (transform.position.x < collision.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(-10, rb.velocity.y);
+            }
+
+            else if (transform.position.x > collision.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(10, rb.velocity.y);
             }
 
         }
