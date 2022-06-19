@@ -27,7 +27,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
+        if (!isHurt)
+        {
+            Movement();
+        }
         SwitchAnim();
     }
 
@@ -68,7 +71,15 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("jumping", false);
                 anim.SetBool("falling", true);
             }
-        }else if (coll.IsTouchingLayers(ground))
+        }
+        else if (isHurt)
+        {
+            if(Mathf.Abs(rb.velocity.x) < 0.1f)
+            {
+
+            }
+        }
+        else if (coll.IsTouchingLayers(ground))
         {
             anim.SetBool("falling", false);
             anim.SetBool("idle", true);
@@ -100,11 +111,13 @@ public class PlayerController : MonoBehaviour
             }else if (transform.position.x < collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(-10, rb.velocity.y);
+                isHurt = true;
             }
 
             else if (transform.position.x > collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(10, rb.velocity.y);
+                isHurt = true;
             }
 
         }
