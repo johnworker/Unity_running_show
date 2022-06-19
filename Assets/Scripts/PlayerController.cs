@@ -84,4 +84,13 @@ public class PlayerController : MonoBehaviour
             CherryNum.text = Cherry.ToString();
         }
     }
+
+    // ®ø·À¼Ä¤H
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
