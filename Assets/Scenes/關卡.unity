@@ -2103,6 +2103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftpoint: {fileID: 285942386}
   rightpoint: {fileID: 626910657}
+  Speed: 5
 --- !u!58 &1643822349
 CircleCollider2D:
   m_ObjectHideFlags: 0
