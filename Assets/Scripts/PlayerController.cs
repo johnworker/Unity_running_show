@@ -64,6 +64,12 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("idle", false);
 
+        //切換動畫效果時先判斷，如果向上的速度沒有了，同時他又不再地面上→就直接觸發掉落動畫
+        if(rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
+        {
+            anim.SetBool("falling", true);
+        }
+
         if (anim.GetBool("jumping"))
         {
             if(rb.velocity.y < 0)
