@@ -9206,6 +9206,7 @@ GameObject:
   - component: {fileID: 2132156396}
   - component: {fileID: 2132156398}
   - component: {fileID: 2132156397}
+  - component: {fileID: 2132156399}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Untagged
@@ -9339,6 +9340,23 @@ CircleCollider2D:
   m_Offset: {x: -0.27000004, y: -0.47999996}
   serializedVersion: 2
   m_Radius: 0.7007505
+--- !u!114 &2132156399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132156393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115d6f678ce042049a191c15bd5e6691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: {fileID: 1659348095}
+  bottom: {fileID: 2069728664}
+  Speed: 0
+  TopY: 0
+  BottomY: 0
 --- !u!1001 &523327860525171815
 PrefabInstance:
   m_ObjectHideFlags: 0
