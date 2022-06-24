@@ -8,7 +8,7 @@ public class Enemy_Eagle : MonoBehaviour
     private Collider2D coll;
     public Transform top, bottom;
     public float Speed;
-    public float TopY, BottomY;
+    private float TopY, BottomY;
 
     private bool isUp;
 
@@ -16,10 +16,35 @@ public class Enemy_Eagle : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        TopY = top.position.y;
+        BottomY = bottom.position.y;
+        Destroy(top.gameObject);
+        Destroy(bottom.gameObject);
     }
 
     void Update()
     {
-        
+        Movement();
+    }
+
+    void Movement()
+    {
+        if (isUp)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Speed);
+            if(transform.position.y > TopY)
+            {
+                isUp = false;
+            }
+        }
+
+        else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -Speed);
+            if(transform.position.y < BottomY)
+            {
+                isUp = true;
+            }
+        }
     }
 }
