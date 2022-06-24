@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Eagle : MonoBehaviour
+public class Enemy_Eagle : Enemy
 {
     private Rigidbody2D rb;
     private Collider2D coll;

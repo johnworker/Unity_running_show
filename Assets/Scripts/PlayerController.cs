@@ -111,11 +111,12 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy") 
-        { 
-
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if(anim.GetBool("falling"))
             {
-                Destroy(collision.gameObject);
+                enemy.JumpOn();
+
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce * Time.deltaTime);
                 anim.SetBool("jumping", true);
             }else if (transform.position.x < collision.gameObject.transform.position.x)
