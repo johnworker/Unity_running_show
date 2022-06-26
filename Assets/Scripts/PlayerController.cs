@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public Collider2D coll;
-    public AudioSource jumpAudio;
+    public AudioSource jumpAudio,hurtAudio,cherryAudio;
     [Space]
     public float speed;
     public float JumpForce;
@@ -105,6 +105,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "Collection")
         {
+            cherryAudio.Play();
             Destroy(collision.gameObject);
             Cherry += 1;
             CherryNum.text = Cherry.ToString();
@@ -123,15 +124,19 @@ public class PlayerController : MonoBehaviour
 
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
                 anim.SetBool("jumping", true);
-            }else if (transform.position.x < collision.gameObject.transform.position.x)
+            }
+            //¨ü¶Ë
+            else if (transform.position.x < collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(-10, rb.velocity.y);
+                hurtAudio.Play();
                 isHurt = true;
             }
 
             else if (transform.position.x > collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(10, rb.velocity.y);
+                hurtAudio.Play();
                 isHurt = true;
             }
 
