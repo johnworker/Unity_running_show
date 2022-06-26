@@ -5,17 +5,18 @@ using UnityEngine;
 public class Enemy_Eagle : Enemy
 {
     private Rigidbody2D rb;
-    private Collider2D coll;
+    //private Collider2D coll;
     public Transform top, bottom;
     public float Speed;
     private float TopY, BottomY;
 
-    private bool isUp;
+    private bool isUp = true;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<Collider2D>();
+        //coll = GetComponent<Collider2D>();
         TopY = top.position.y;
         BottomY = bottom.position.y;
         Destroy(top.gameObject);
