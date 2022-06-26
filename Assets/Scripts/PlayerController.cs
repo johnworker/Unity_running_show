@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         //角色移動
         if(horizontalMove != 0)
         {
-            rb.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb.velocity.y);
+            rb.velocity = new Vector2(horizontalMove * speed * Time.fixedDeltaTime, rb.velocity.y);
             anim.SetFloat("running", Mathf.Abs(horizontalMove));
         }
 
@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
             jumpAudio.Play();
             anim.SetBool("jumping", true);
         }
+
+        Crouch();
     }
 
     // 切換動畫效果
@@ -140,6 +142,19 @@ public class PlayerController : MonoBehaviour
                 isHurt = true;
             }
 
+        }
+    }
+
+    void Crouch()
+    {
+        if (Input.GetButtonDown("Crouch"))
+        {
+            anim.SetBool("crouching", true);
+        }
+
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            anim.SetBool("crouching", false);
         }
     }
 }
