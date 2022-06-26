@@ -10,8 +10,11 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public Collider2D coll;
+    public AudioSource jumpAudio;
+    [Space]
     public float speed;
-    public float jumpforce;
+    public float JumpForce;
+    [Space]
     public LayerMask ground;
     public int Cherry;
     private bool isHurt;
@@ -34,16 +37,16 @@ public class PlayerController : MonoBehaviour
         SwitchAnim();
     }
 
-    void Movement()
+    void Movement()//移動
     {
-        float horizontalmove = Input.GetAxis("Horizontal");
+        float horizontalMove = Input.GetAxis("Horizontal");
         float facedircetion = Input.GetAxisRaw("Horizontal");
 
         //角色移動
-        if(horizontalmove != 0)
+        if(horizontalMove != 0)
         {
-            rb.velocity = new Vector2(horizontalmove * speed * Time.deltaTime, rb.velocity.y);
-            anim.SetFloat("running", Mathf.Abs(facedircetion));
+            rb.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb.velocity.y);
+            anim.SetFloat("running", Mathf.Abs(horizontalMove));
         }
 
         if(facedircetion != 0)
@@ -54,7 +57,8 @@ public class PlayerController : MonoBehaviour
         //角色跳躍
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce * Time.deltaTime);
+            rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
+            jumpAudio.Play();
             anim.SetBool("jumping", true);
         }
     }
@@ -117,7 +121,7 @@ public class PlayerController : MonoBehaviour
             {
                 enemy.JumpOn();
 
-                rb.velocity = new Vector2(rb.velocity.x, jumpforce * Time.deltaTime);
+                rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
                 anim.SetBool("jumping", true);
             }else if (transform.position.x < collision.gameObject.transform.position.x)
             {
