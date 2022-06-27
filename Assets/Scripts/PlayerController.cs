@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     public Collider2D coll;
+    public Collider2D DidColl;
+    public Transform CellingCheck;
     public AudioSource jumpAudio,hurtAudio,cherryAudio;
     [Space]
     public float speed;
@@ -147,14 +149,19 @@ public class PlayerController : MonoBehaviour
 
     void Crouch()
     {
+        if (!Physics2D.OverlapCircle(CellingCheck.position,0.2f,ground)) { 
         if (Input.GetButtonDown("Crouch"))
         {
             anim.SetBool("crouching", true);
+            DidColl.enabled = false;
         }
 
         else if (Input.GetButtonUp("Crouch"))
         {
             anim.SetBool("crouching", false);
+            DidColl.enabled = true;
         }
+
+       }
     }
 }
