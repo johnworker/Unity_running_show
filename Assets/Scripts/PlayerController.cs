@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "DeadLine")
         {
+            GetComponent<AudioSource>().enabled = false;
             Invoke("Restart",2f);
         }
 
