@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -104,9 +105,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 收集物品
+    // 碰撞觸發器
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 收集物品
         if (collision.tag == "Collection")
         {
             cherryAudio.Play();
@@ -114,6 +116,13 @@ public class PlayerController : MonoBehaviour
             Cherry += 1;
             CherryNum.text = Cherry.ToString();
         }
+
+        if (collision.tag == "DeadLine")
+        {
+            Invoke("Restart",2f);
+        }
+
+
     }
 
     // 消滅敵人
@@ -150,18 +159,23 @@ public class PlayerController : MonoBehaviour
     void Crouch()
     {
         if (!Physics2D.OverlapCircle(CellingCheck.position,0.2f,ground)) { 
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButton("Crouch"))
         {
             anim.SetBool("crouching", true);
             DidColl.enabled = false;
         }
 
-        else if (Input.GetButtonUp("Crouch"))
+        else 
         {
             anim.SetBool("crouching", false);
             DidColl.enabled = true;
         }
 
        }
+    }
+
+    void Restart()
+    {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
