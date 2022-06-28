@@ -40,6 +40,12 @@ public class PlayerController : MonoBehaviour
         SwitchAnim();
     }
 
+    private void Update()
+    {
+        Jump();
+        Crouch();
+    }
+
     void Movement()//移動
     {
         float horizontalMove = Input.GetAxis("Horizontal");
@@ -57,21 +63,12 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(facedircetion, 1, 1);
         }
 
-        //角色跳躍
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
-            jumpAudio.Play();
-            anim.SetBool("jumping", true);
-        }
-
-        Crouch();
     }
 
     // 切換動畫效果
     void SwitchAnim()
     {
-        anim.SetBool("idle", false);
+        //anim.SetBool("idle", false);
 
         //切換動畫效果時先判斷，如果向上的速度沒有了，同時他又不再地面上→就直接觸發掉落動畫
         if(rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
@@ -94,14 +91,14 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(rb.velocity.x) < 0.1f)
             {
                 anim.SetBool("hurt", false);
-                anim.SetBool("idle", true);
+                //anim.SetBool("idle", true);
                 isHurt = false;
             }
         }
         else if (coll.IsTouchingLayers(ground))
         {
             anim.SetBool("falling", false);
-            anim.SetBool("idle", true);
+            //anim.SetBool("idle", true);
         }
     }
 
@@ -113,7 +110,7 @@ public class PlayerController : MonoBehaviour
         {
             cherryAudio.Play();
             Destroy(collision.gameObject);
-            Cherry += 1;
+            //Cherry += 1;
             CherryNum.text = Cherry.ToString();
         }
 
@@ -175,8 +172,26 @@ public class PlayerController : MonoBehaviour
        }
     }
 
+    //角色跳躍
+    void Jump()
+    {
+        if (Input.GetButton("Jump") && coll.IsTouchingLayers(ground))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
+            jumpAudio.Play();
+            anim.SetBool("jumping", true);
+        }
+
+    }
+
+    // 重置當前場景
     void Restart()
     {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GherryCount()
+    {
+        Cherry += 1;
     }
 }
