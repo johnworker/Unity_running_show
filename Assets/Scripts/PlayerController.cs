@@ -12,14 +12,15 @@ public class PlayerController : MonoBehaviour
 
     public Collider2D coll;
     public Collider2D DidColl;
-    public Transform CellingCheck;
+    public Transform CellingCheck, GroundCheck;
     public AudioSource jumpAudio,hurtAudio,cherryAudio;
     [Space]
     public float speed;
     public float JumpForce;
     [Space]
     public LayerMask ground;
-    public int Cherry;
+    [SerializeField]
+    public int Cherry,Gem;
     private bool isHurt;
 
     [SerializeField] private TextMeshProUGUI CherryNum;
@@ -37,13 +38,10 @@ public class PlayerController : MonoBehaviour
         {
             Movement();
         }
-        SwitchAnim();
-    }
-
-    private void Update()
-    {
         Jump();
+        SwitchAnim();
         Crouch();
+        CherryNum.text = Cherry.ToString();
     }
 
     void Movement()//²¾°Ê
@@ -111,7 +109,8 @@ public class PlayerController : MonoBehaviour
             cherryAudio.Play();
             Destroy(collision.gameObject);
             //Cherry += 1;
-            CherryNum.text = Cherry.ToString();
+            collision.GetComponent<Animator>().Play("isGot");
+            //CherryNum.text = Cherry.ToString();
         }
 
         if (collision.tag == "DeadLine")
