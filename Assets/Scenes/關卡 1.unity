@@ -8977,7 +8977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 1393811453}
-  moveRate: 0.1
+  moveRate: 0.4
+  lockY: 0
 --- !u!1 &1730000443
 GameObject:
   m_ObjectHideFlags: 3
@@ -9522,6 +9523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 1393811453}
   moveRate: 0.4
+  lockY: 1
 --- !u!1 &2095467562
 GameObject:
   m_ObjectHideFlags: 0
