@@ -9791,6 +9791,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 523327861895804296, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 523327861895804297, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 523327861895804298, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: DidColl
       value: 
@@ -9804,9 +9812,17 @@ PrefabInstance:
       value: 410
       objectReference: {fileID: 0}
     - target: {fileID: 523327861895804298, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 523327861895804298, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: GroundCheck
       value: 
       objectReference: {fileID: 1657957866}
+    - target: {fileID: 523327861895804299, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 523327861895804301, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -9852,12 +9868,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523327861895804302, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 523327861895804302, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 523327861895804303, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 523327861895804303, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 662019314145301953, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
