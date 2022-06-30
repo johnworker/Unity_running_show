@@ -38,8 +38,9 @@ public class PlayerController : MonoBehaviour
         {
             Movement();
         }
-        Jump();
+
         SwitchAnim();
+        Jump();
         Crouch();
         CherryNum.text = Cherry.ToString();
     }
@@ -89,14 +90,14 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(rb.velocity.x) < 0.1f)
             {
                 anim.SetBool("hurt", false);
-                //anim.SetBool("idle", true);
+                anim.SetBool("idle", true);
                 isHurt = false;
             }
         }
         else if (coll.IsTouchingLayers(ground))
         {
             anim.SetBool("falling", false);
-            //anim.SetBool("idle", true);
+            anim.SetBool("idle", true);
         }
     }
 
