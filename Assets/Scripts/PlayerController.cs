@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour
         Crouch();
         SwitchAnim();
         Jump();
+    }
+
+    public void Update()
+    {
         CherryNum.text = Cherry.ToString();
     }
 
@@ -109,7 +113,7 @@ public class PlayerController : MonoBehaviour
         {
             cherryAudio.Play();
             Destroy(collision.gameObject);
-            //Cherry += 1;
+            Cherry += 1;
             collision.GetComponent<Animator>().Play("isGot");
             //CherryNum.text = Cherry.ToString();
         }
