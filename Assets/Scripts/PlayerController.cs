@@ -39,18 +39,18 @@ public class PlayerController : MonoBehaviour
             Movement();
         }
 
+        Crouch();
         SwitchAnim();
         Jump();
-        Crouch();
         CherryNum.text = Cherry.ToString();
     }
 
-    void Movement()//移動
+    void Movement() // 移動
     {
         float horizontalMove = Input.GetAxis("Horizontal");
         float facedircetion = Input.GetAxisRaw("Horizontal");
 
-        //角色移動
+        // 角色移動
         if(horizontalMove != 0)
         {
             rb.velocity = new Vector2(horizontalMove * speed * Time.fixedDeltaTime, rb.velocity.y);
@@ -154,16 +154,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // 角色趴下
     void Crouch()
     {
-        if (!Physics2D.OverlapCircle(CellingCheck.position,0.2f,ground)) { 
-        if (Input.GetButton("Crouch"))
+        if (!Physics2D.OverlapCircle(CellingCheck.position,0.3f,ground)) { 
+            if (Input.GetButton("Crouch"))
         {
             anim.SetBool("crouching", true);
             DidColl.enabled = false;
         }
 
-        else 
+            else 
         {
             anim.SetBool("crouching", false);
             DidColl.enabled = true;
@@ -172,7 +173,7 @@ public class PlayerController : MonoBehaviour
        }
     }
 
-    //角色跳躍
+    // 角色跳躍
     void Jump()
     {
         if (Input.GetButton("Jump") && coll.IsTouchingLayers(ground))
