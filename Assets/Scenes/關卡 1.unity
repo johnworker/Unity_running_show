@@ -1793,6 +1793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1551523024}
+  audioMixer: {fileID: 24100000, guid: 7056cae113ce0ef44ae930b0a50e8d37, type: 2}
 --- !u!1 &1051002713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,8 +2291,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 619664464}
   m_HandleRect: {fileID: 1633556102}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -10942,15 +10943,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1995846129, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1995846129, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 7056cae113ce0ef44ae930b0a50e8d37, type: 2}
     - target: {fileID: 1995846130, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1995846131, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 523327861895804296, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
@@ -11046,7 +11051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 662019314145301953, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3273756263106426473, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Icon
