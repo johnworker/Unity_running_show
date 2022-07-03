@@ -1211,15 +1211,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset7_51
+      name: tileset9
       rect:
         serializedVersion: 2
         x: 272
         y: 240
         width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 1, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1319,9 +1319,9 @@ TextureImporter:
       name: tileset7_56
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 192
-        width: 16
+        width: 15
         height: 16
       alignment: 9
       pivot: {x: 1, y: 1}
@@ -3037,6 +3037,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tileset7_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd12c0ff821d9ce47b89586c82203f13
+      internalID: -1771857728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3048,7 +3069,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileset7_53: 1509230129
+      tileset7_56: -2027403629
       tileset7_6: -1149374831
       tileset7_81: -2117183890
       tileset7_91: -653231340
@@ -3061,10 +3082,12 @@ TextureImporter:
       tileset7_39: 190369297
       tileset7_32: -1884656164
       tileset7_118: -106459909
+      tileset9: 2016727369
       tileset7_79: 2023578260
       tileset7_127: 531323919
       tileset7_132: 470934716
       tileset7_45: 144576561
+      tileset7_0: -1771857728
       tileset7_109: 1539483725
       tileset7_119: -153076293
       tileset7_95: -2016141478
@@ -3136,7 +3159,6 @@ TextureImporter:
       tileset7_61: 1062109338
       tileset7_59: 473517082
       tileset7_24: 1084993914
-      tileset7_51: 2016727369
       tileset7_65: 2027475171
       tileset7_105: 186900523
       tileset7_55: -256000601
@@ -3185,7 +3207,7 @@ TextureImporter:
       tileset7_101: 1323584716
       tileset7_129: 801958344
       tileset7_131: -904622188
-      tileset7_56: -2027403629
+      tileset7_53: 1509230129
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
