@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public Collider2D DidColl;
     public Transform CellingCheck, GroundCheck;
     public AudioSource jumpAudio,hurtAudio,cherryAudio;
+    public Joystick joystick;
+
     [Space]
     public float speed;
     public float JumpForce;
