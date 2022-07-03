@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public Collider2D coll;
     public Collider2D DidColl;
     public Transform CellingCheck, GroundCheck;
-    public AudioSource jumpAudio,hurtAudio,cherryAudio;
+    //public AudioSource jumpAudio,hurtAudio,cherryAudio;
     public Joystick joystick;
 
     [Space]
@@ -134,7 +134,8 @@ public class PlayerController : MonoBehaviour
         // 收集物品
         if (collision.tag == "Collection")
         {
-            cherryAudio.Play();
+            //cherryAudio.Play();
+            SoundManager.instance.CherryAudio();
             Destroy(collision.gameObject);
             Cherry += 1;
             collision.GetComponent<Animator>().Play("isGot");
@@ -167,14 +168,16 @@ public class PlayerController : MonoBehaviour
             else if (transform.position.x < collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(-10, rb.velocity.y);
-                hurtAudio.Play();
+                //hurtAudio.Play();
+                SoundManager.instance.HurtAudio();
                 isHurt = true;
             }
 
             else if (transform.position.x > collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(10, rb.velocity.y);
-                hurtAudio.Play();
+                //hurtAudio.Play();
+                SoundManager.instance.HurtAudio();
                 isHurt = true;
             }
 
@@ -212,7 +215,8 @@ public class PlayerController : MonoBehaviour
         //if (joystick.Vertical>0.5f && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
-            jumpAudio.Play();
+            SoundManager.instance.JumpAudio();
+            //jumpAudio.Play();
             anim.SetBool("jumping", true);
         }
 
