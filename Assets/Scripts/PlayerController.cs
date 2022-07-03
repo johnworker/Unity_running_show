@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
             //¨ü¶Ë
             else if (transform.position.x < collision.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(-10, rb.velocity.y);
+                rb.velocity = new Vector2(-5, rb.velocity.y);
                 //hurtAudio.Play();
                 SoundManager.instance.HurtAudio();
                 isHurt = true;
@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
             else if (transform.position.x > collision.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(10, rb.velocity.y);
+                rb.velocity = new Vector2(5, rb.velocity.y);
                 //hurtAudio.Play();
                 SoundManager.instance.HurtAudio();
                 isHurt = true;
