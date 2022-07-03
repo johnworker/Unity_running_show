@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
     [SerializeField]
     public int Cherry,Gem;
-    private bool isHurt;
+    private bool isHurt; // 默認是false
+    private bool isGround;
+    private int extraJump;
 
     [SerializeField] private TextMeshProUGUI CherryNum;
 
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
         Crouch();
         SwitchAnim();
         Jump();
+        isGround = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, ground);
+        //newJump();
     }
 
     public void Update()
@@ -56,17 +60,34 @@ public class PlayerController : MonoBehaviour
         float horizontalMove = Input.GetAxis("Horizontal");
         float facedircetion = Input.GetAxisRaw("Horizontal");
 
+        // 手機板動量方位
+        //float horizontalMove = joystick.Horizontal;  // 他的值介於 1f ～ -1f
+        //float facedircetion = joystick.Horizontal;
+
         // 角色移動
-        if(horizontalMove != 0)
+        if (horizontalMove != 0)
         {
             rb.velocity = new Vector2(horizontalMove * speed * Time.fixedDeltaTime, rb.velocity.y);
             anim.SetFloat("running", Mathf.Abs(horizontalMove));
         }
 
-        if(facedircetion != 0)
+        //if(facedircetion != 0)
+        //{
+        //    transform.localScale = new Vector3(facedircetion, 1, 1);
+        //}
+
+        // 手機板左右移動設置
+        if (facedircetion > 0f)
         {
-            transform.localScale = new Vector3(facedircetion, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
+
+        if (facedircetion < 0f)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+
 
     }
 
@@ -163,8 +184,11 @@ public class PlayerController : MonoBehaviour
     // 角色趴下
     void Crouch()
     {
-        if (!Physics2D.OverlapCircle(CellingCheck.position,0.3f,ground)) { 
+        if (!Physics2D.OverlapCircle(CellingCheck.position,0.3f,ground)) {
             if (Input.GetButton("Crouch"))
+
+            //手機板角色趴下方法
+            //if (joystick.Vertical<-0.5f)
         {
             anim.SetBool("crouching", true);
             DidColl.enabled = false;
@@ -183,6 +207,9 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         if (Input.GetButton("Jump") && coll.IsTouchingLayers(ground))
+
+        //手機板角色跳躍方法
+        //if (joystick.Vertical>0.5f && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpForce * Time.deltaTime);
             jumpAudio.Play();
@@ -190,6 +217,29 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    /*void newJump()
+    {
+        if (isGround)
+        {
+            extraJump = 1;
+        }
+
+        if(Input.GetButtonDown("Jump") && extraJump > 0)
+        {
+            rb.velocity = Vector2.up * JumpForce;  //  Vector2.up 就是 new Vector2 (0,1)
+            extraJump--;
+            anim.SetBool("jumping", true);
+        }
+
+        if (Input.GetButtonDown("Jump") && extraJump == 0 && isGround)
+        {
+            rb.velocity = Vector2.up * JumpForce;  //  Vector2.up 就是 new Vector2 (0,1)
+            anim.SetBool("jumping", true);
+
+        }
+
+    }*/
 
     // 重置當前場景
     void Restart()
