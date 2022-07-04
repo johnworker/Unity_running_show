@@ -8,5 +8,6 @@ public class Cherry : MonoBehaviour
     {
         FindObjectOfType<PlayerController>().GherryCount();
         Destroy(gameObject);
+
     }
 }

@@ -10908,7 +10908,7 @@ Tilemap:
   m_GameObject: {fileID: 1981271760}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -8, y: 3, z: 0}
+  - first: {x: -7, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -10918,7 +10918,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -7, y: 3, z: 0}
+  - first: {x: -6, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 3
@@ -11030,8 +11030,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -8, y: 0, z: 0}
-  m_Size: {x: 10, y: 4, z: 1}
+  m_Origin: {x: -9, y: 0, z: 0}
+  m_Size: {x: 11, y: 4, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -11702,7 +11702,7 @@ PrefabInstance:
       objectReference: {fileID: 112586930}
     - target: {fileID: 523327861895804298, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: JumpForce
-      value: 400
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 523327861895804298, guid: de32def1454b63c4b9339be9c1ea2bf8, type: 3}
       propertyPath: m_Enabled
