@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Opossum : Enemy
+public class PlatformMove : Enemy
 {
     private Rigidbody2D rb;
     //private Animator Anim;
@@ -43,7 +43,6 @@ public class Enemy_Opossum : Enemy
             rb.velocity = new Vector2(-Speed, rb.velocity.y);
             if (transform.position.x < leftx)
             {
-                Anim.SetBool("run", true);
                 transform.localScale = new Vector3(-1, 1, 1);
                 Faceleft = false;
             }
@@ -54,7 +53,6 @@ public class Enemy_Opossum : Enemy
             rb.velocity = new Vector2(Speed, rb.velocity.y);
             if (transform.position.x > rightx)
             {
-                Anim.SetBool("run", true);
                 transform.localScale = new Vector3(1, 1, 1);
                 Faceleft = true;
             }
