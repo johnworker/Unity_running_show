@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinGame : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject winImg;
+
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Invoke("Restart", 1.5f);
+            winImg.SetActive(true);
+            Invoke("Replay", 3f);
         }
+
     }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene("Ãö¥d 1");
+    }
+
+
 }

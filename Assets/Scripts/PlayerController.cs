@@ -148,7 +148,6 @@ public class PlayerController : MonoBehaviour
             Invoke("Restart",2f);
         }
 
-
     }
 
     // ®ø·À¼Ä¤H
