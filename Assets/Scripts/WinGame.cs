@@ -7,7 +7,8 @@ public class WinGame : MonoBehaviour
 {
     public GameObject winImg;
     // public GameObject soundObject;
-    //private AudioSource audioSource;
+    // private AudioSource audioSource;
+
 
     public void Start()
     {
@@ -21,6 +22,7 @@ public class WinGame : MonoBehaviour
         {
             winImg.SetActive(true);
             // audioSource.Pause();
+            
             Invoke("Replay", 3f);
         }
 
