@@ -6,13 +6,21 @@ using UnityEngine.SceneManagement;
 public class WinGame : MonoBehaviour
 {
     public GameObject winImg;
+    // public GameObject soundObject;
+    //private AudioSource audioSource;
 
+    public void Start()
+    {
+        // GameObject soundObject = GameObject.Find("BackgroundSoundObjectName");
+        // AudioSource audioSource = soundObject.GetComponent<AudioSource>();
+    }
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             winImg.SetActive(true);
+            // audioSource.Pause();
             Invoke("Replay", 3f);
         }
 

@@ -908,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winImg: {fileID: 1558609982}
+  soundObject: {fileID: 0}
 --- !u!95 &257545495
 Animator:
   serializedVersion: 4
@@ -3747,6 +3748,7 @@ GameObject:
   - component: {fileID: 1558609983}
   - component: {fileID: 1558609985}
   - component: {fileID: 1558609984}
+  - component: {fileID: 1558609986}
   m_Layer: 5
   m_Name: WinImg
   m_TagString: WinImg
@@ -3812,6 +3814,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558609982}
   m_CullTransparentMesh: 1
+--- !u!114 &1558609986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558609982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe0081563d42b24a928cc9013f69cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winImg: {fileID: 1558609982}
+  soundObject: {fileID: 73274099}
 --- !u!1 &1657957865
 GameObject:
   m_ObjectHideFlags: 0
