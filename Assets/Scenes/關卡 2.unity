@@ -908,7 +908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winImg: {fileID: 1558609982}
-  audioMixer: {fileID: 0}
 --- !u!95 &257545495
 Animator:
   serializedVersion: 4
@@ -3827,7 +3826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winImg: {fileID: 1558609982}
-  audioMixer: {fileID: 0}
 --- !u!1 &1657957865
 GameObject:
   m_ObjectHideFlags: 0
