@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WinGame : MonoBehaviour
 {
-    [SerializeField] GameObject winImg;
+    public GameObject winImg;
 
 
     public void Update()
@@ -22,6 +22,5 @@ public class WinGame : MonoBehaviour
     {
         SceneManager.LoadScene("Ãö¥d 1");
     }
-
-
+    
 }
