@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; 
 
 public class WinGame : MonoBehaviour
 {
     [SerializeField] GameObject winImg;
 
 
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
