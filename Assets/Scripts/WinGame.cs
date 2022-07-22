@@ -23,7 +23,7 @@ public class WinGame : MonoBehaviour
             winImg.SetActive(true);
             // audioSource.Pause();
             
-            Invoke("Replay", 3f);
+            Invoke("Replay", 2f);
         }
 
     }
