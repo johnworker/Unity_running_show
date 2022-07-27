@@ -7,13 +7,15 @@ public class WinGame : MonoBehaviour
 {
     public GameObject winImg;
     // public GameObject soundObject;
-    // private AudioSource audioSource;
+    private AudioSource audioSource;
 
 
     public void Start()
     {
-        // GameObject soundObject = GameObject.Find("BackgroundSoundObjectName");
-        // AudioSource audioSource = soundObject.GetComponent<AudioSource>();
+        // Find找階層面板的物件
+        GameObject soundObject = GameObject.Find("Player");
+        audioSource = soundObject.GetComponent<AudioSource>();
+        
     }
 
     public void Update()
@@ -21,8 +23,7 @@ public class WinGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             winImg.SetActive(true);
-            // audioSource.Pause();
-            
+            audioSource.Pause();
             Invoke("Replay", 2f);
         }
 
